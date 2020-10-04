@@ -9,7 +9,7 @@ function router(app){
     app.use('/club',clubRouter)
     app.use('/people',memberRouter)
     app.use('/admin',adminRouter)
-    // app.use('/client',clientRouter)
+    app.use('/client',clientRouter)
     app.use('/trash',trashRouter)
 }
 

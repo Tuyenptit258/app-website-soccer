@@ -1,13 +1,12 @@
-// const express = require('express')
-// const router = express.Router();
+const express = require('express')
+const router = express.Router();
 
 
-// const clientController = require('../controllers/clientC')
-// router.get('/club', clientController.adminClub)
-// // router.post('/tao', adminController.adminTao)
-// // router.get('/:id/edit', clientController.edit)
+const clientController = require('../controllers/Member')
+router.get('/member', clientController.member)
+router.post('/tao', clientController.tao)
 
-// // router.put('/:id', clientController.sua)
 
-// // router.delete('/:id', clientController.destroy)
-// module.exports = router
+
+
+module.exports = router
