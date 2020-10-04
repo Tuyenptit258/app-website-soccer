@@ -15,6 +15,6 @@ app.get('/', function(req,res){
   res.render('home.hbs')
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("start on")
 })
