@@ -12,7 +12,7 @@ app.use(methodOverride('_method'))
 route(app)
 
 app.get('/', function(req,res){
-  res.json('hello')
+  res.render('home.hbs')
 })
 
 app.listen(3000, () => {
