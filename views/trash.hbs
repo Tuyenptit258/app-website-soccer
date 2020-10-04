@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Trang Chu <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="me/done/ce">Đăng kí thành viên</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link disabled" href="/me/done/allprofile">Profile</a>
+        </li>
+      </ul>
+      <form class="form-inline col-md-5 my-lg-0 ">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/search">search</a></button>
+      </form>
+      <li class="navbar-nav mr-auto nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <a class="dropdown-item active" href="/muahang/creat">Creat</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/buy/for/me">Private</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/buy/trash/me">Trash</a>
+        </div>
+      </li>
+      <li class="navbar-nav mr-auto active">
+
+        <a class="nav-link active " href="/register">Dang ki</a>
+        <a class="nav-link active" href="/login">Dang Xuat</a>
+      </li>
+    </div>
+  </nav>
+</div>
+<div class="container">
+    <div>
+        <a href="/admin/club">Danh sách câu lạc bộ</a>
+        <h3>Danh sách câu lạc bộ,  tôi đã xóa</h3>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên Câu lạc bộ</th>
+                <th scope="col">Tên lãnh đội</th>
+                <th scope="col">Tuổi</th>
+                <th scope="col">Số thành viên</th>
+                <th scope="col">Địa chỉ</th>
+                <th scope="col">eamil</th>
+                <th scope="col">Điện thoại</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Thời gian tạo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clubs}}
+            <tr>
+                <th scope="row">{{ @index }}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.nameld}}</td>
+                <td>{{this.age}}</td>
+                <td>{{this.member}}</td>
+                <td>{{this.address}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+
+                <td>{{this.decreption}}</td>
+                <td>{{this.creatAt}}</td>
+                <td>
+                    <a class="btn btn-link btn-restore" data-id="{{this._id}}" href="">Khôi phục</a>
+                    <a class="btn btn-link" href="" data-id="{{this._id}}" data-toggle="modal"
+                        data-target="#delete-club-modal">Xóa vĩnh viễn</a>
+
+
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="5" class="text-center">
+                    Chưa tồn tại Câu lạc bộ nào
+                    <a href="/club/me">Tạo câu lạc bộ</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+<!-- confirm-->
+<div id="delete-club-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xóa câu lạc bộ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa vĩnh viễn câu lạc bộ này không ?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-delete-club" type="button" class="btn btn-danger">Xóa vĩnh viễn</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Delete form-->
+<form name="delete-club-form" method="POST"></form>
+<form name="restore-club-form" method="POST"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var clubId
+        var deleteForm = document.forms['delete-club-form']
+        var restoreForm = document.forms['restore-club-form']
+        var btnDeleteClub = document.getElementById('btn-delete-club')
+        var restoreBtn = $('.btn-restore')
+        // when dialog confirm click
+        $('#delete-club-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            clubId = button.data('id')
+
+
+        })
+
+        // when delete produce btn click
+
+        btnDeleteClub.onclick = function () {
+            deleteForm.action = '/trash/' + clubId + '/force?_method=DELETE'
+            deleteForm.submit()
+        }
+
+        //Restore btn clicked
+
+        restoreBtn.click(function (e) {
+            e.preventDefault()
+
+            var clubId = $(this).data('id')
+            restoreForm.action = '/trash/' + clubId + '/restore?_method=PATCH'
+            restoreForm.submit()
+        })
+
+    })
+
+</script>

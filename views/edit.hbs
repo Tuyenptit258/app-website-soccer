@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Trang Chu <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="me/done/ce">Đăng kí thành viên</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link disabled" href="/me/done/allprofile">Profile</a>
+        </li>
+      </ul>
+      <form class="form-inline col-md-5 my-lg-0 ">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="/search">search</a></button>
+      </form>
+      <li class="navbar-nav mr-auto nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <a class="dropdown-item active" href="/muahang/creat">Creat</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/buy/for/me">Private</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/buy/trash/me">Trash</a>
+        </div>
+      </li>
+      <li class="navbar-nav mr-auto active">
+
+        <a class="nav-link active " href="/register">Dang ki</a>
+        <a class="nav-link active" href="/login">Dang Xuat</a>
+      </li>
+    </div>
+  </nav>
+</div>
+
+
+<div class="container">
+  <h1>Sửa Câu lạc bộ</h1>
+  <div class="row">
+
+    <div class="col-sm">
+      <form method="POST" action="/admin/{{club._id}}?_method=PUT">
+        <div class="form-group">
+          <label for="name">Tên Câu lạc bộ</label>
+          <textarea class="form-control" id="name" name="name">{{club.name}}</textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="nameld">Tên lãnh đội</label>
+          <input type="text" class="form-control" value="{{club.nameld}}" id="nameld" name="nameld">
+        </div>
+        <div class="form-group">
+          <label for="age">Tuổi thành lập</label>
+          <input type="text" class="form-control" value="{{club.age}}" id="age" name="age">
+        </div>
+        <div class="form-group">
+          <label for="address">Địa chỉ</label>
+          <input type="text" class="form-control" value="{{club.address}}" id="address" name="address">
+        </div>
+        <div class="form-group">
+          <label for="member">Số lượng thành viên</label>
+          <input type="text" class="form-control" value="{{club.member}}" id="member" name="member">
+        </div>
+
+        {{!-- <div class="form-group">
+          <label for="email">Address</label>
+          <input type="text" class="form-control" value="{{club.email}}" id="email" name="email">
+        </div> --}}
+        <div class="form-group">
+          <label for="phone">Số điện thoại</label>
+          <input type="text" class="form-control" value="{{club.phone}}" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="text" class="form-control" value="{{club.email}}" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="decreption">Mô tả</label>
+          <textarea class="form-control" id="decreption" name="decreption">{{club.decreption}}</textarea>
+        </div>
+        
+        {{!-- <div class="form-group">
+                    <label for="image">Ảnh</label>
+                    <input type="text" class="form-control" id="image" name="image" aria-describedby="emailHelp"
+                        placeholder="Mô tả">
+                </div> --}}
+
+
+
+        <div class="container col col-lg-2">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

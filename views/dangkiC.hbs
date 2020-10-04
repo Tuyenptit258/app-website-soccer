@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+
+<div class="container">
+    <h1>Nhập Thông tin Câu lạc bộ</h1>
+    <div>
+        <a href="/club/me"><button class="btn btn-primary">Quay lại</button></a>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <form method="POST" action="/club/dangki" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="name">Tên CLB</label>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp"
+                        placeholder="Tên">
+                </div>
+                <div class="form-group">
+                    <label for="nameld">Lãnh đội</label>
+                    <input type="text" class="form-control" id="nameld" name="nameld" placeholder="Tên lãnh đội">
+                </div>
+                <div class="form-group">
+                    <label for="age">Tuổi</label>
+                    <input type="text" class="form-control" id="age" name="age" aria-describedby="emailHelp"
+                        placeholder="AGE">
+                </div>
+                <div class="form-group">
+                    <label for="member">Số lượng thành viên</label>
+                    <input type="text" class="form-control" id="member" name="member" aria-describedby="emailHelp"
+                        placeholder="Số lượng thành viên">
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp"
+                        placeholder="Địa chỉ">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                        placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Điện thoại</label>
+                    <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp"
+                        placeholder="Điện thoại">
+                </div>
+
+                <div class="form-group">
+                    <label for="decreption">Mô tả</label>
+                    <input type="text" class="form-control" id="decreption" name="decreption" placeholder="Mô tả">
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Ảnh đại diện</label>
+                    <input type="file" class="form-control-file" id="avatar" name="avatar">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>
