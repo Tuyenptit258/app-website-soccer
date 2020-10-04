@@ -11,6 +11,9 @@ app.use(methodOverride('_method'))
 
 route(app)
 
+app.get('/', function(req,res){
+  res.json('hello')
+})
 
 app.listen(3000, () => {
   console.log("start on")
